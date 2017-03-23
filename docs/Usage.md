@@ -69,3 +69,55 @@ Here are sample usages of the currently supported property editors. You are not 
   }
 ...
 ```
+
+### Color Picker
+
+ - **Typical CSS Property**: background-color, color (anything which supports CSS colors)
+ - **Supported values**: Developer provided prevalues (see below). The value or string must be a valid CSS color value.
+ - **Editor**: Simple color picker
+
+**Note**: Prior to v7.5.4 grid prevalues only supported a string array. From v7.5.4+ prevalues support a mixture of label/value objects and strings.
+
+#### Background Color Picker
+
+```json
+  {
+    "label": "Set background color",
+    "description": "Set the row background color",
+    "key": "background-color",
+    "view": "/App_Plugins/Our.Umbraco.GridSettings/editors/ColorPicker/view.html",
+    "prevalues": [
+      {
+        "label": "Blue",
+        "value": "#0000ff"
+      },
+      {
+        "label": "Green",
+        "value": "#00ff00"
+      },
+      "#ff0000"
+    ]
+  },
+```
+
+#### Foreground Color Picker
+
+```json
+  {
+    "label": "Set text color",
+    "description": "Set the row text color",
+    "key": "color",
+    "view": "/App_Plugins/Our.Umbraco.GridSettings/editors/ColorPicker/view.html",
+    "prevalues": [
+      {
+        "label": "Black",
+        "value": "#000000"
+      },
+      {
+        "label": "White",
+        "value": "#ffffff"
+      },
+      "#808080"
+    ]
+  }
+```
