@@ -1,9 +1,8 @@
 (function () {
     'use strict';
 
-    var viewCssPath = "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/view.css";
-
     var controller = function ($scope, assetsService) {
+        var viewCssPath = "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/view.css";
         var xPositions = ["left", "center", "right"];
         var yPositions = ["top", "center", "bottom"];
 
