@@ -3,6 +3,7 @@
     "/App_Plugins/Our.Umbraco.GridSettings/directives/CheckRadioList/directive.js",
     "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/controller.js",
     "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundRepeat/controller.js",
-    "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundSize/controller.js"
+    "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundSize/controller.js",
+    "/App_Plugins/Our.Umbraco.GridSettings/editors/ColorPicker/controller.js"
   ]
 }
