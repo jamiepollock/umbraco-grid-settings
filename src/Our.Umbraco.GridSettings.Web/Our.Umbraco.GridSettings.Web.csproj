@@ -66,6 +66,8 @@
   <ItemGroup>
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\controller.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\view.html" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundSize\controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundSize\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\package.manifest" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\directive.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\view.css" />
