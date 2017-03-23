@@ -2,9 +2,12 @@
     display: inline-block;
     width: 2em;
     height: 2em;
-    border: 0.25em solid #ffffff;
+    outline: 0.2em solid #d9d9d9;
+    border: 0.2em solid #fff;
+    margin: 0.5em;
+    cursor: pointer;
 }
 
-    .gridsettings--colorpicker li.active {
-        border-color: #000000;
-    }
+.gridsettings--colorpicker li.active {
+    outline-color: #df7f48;
+}
