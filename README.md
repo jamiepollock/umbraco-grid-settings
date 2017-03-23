@@ -31,3 +31,10 @@ If you have an implementation you'd like to please [submit a pull request](https
 ## Licensing
 
 Licensed under the [MIT License](https://github.com/jamiepollock/umbraco-grid-settings/blob/master/LICENSE.md).
+
+### Package Logo
+
+Logo created using [Creative Commons](https://creativecommons.org/licenses/by/3.0/) sourced icons from the Noun Project:
+
+ - [grid by Royyan Wijaya](https://thenounproject.com/icon/927539/)
+ - [cog by il Capitano](https://thenounproject.com/icon/727175/)
