@@ -1,5 +1,7 @@
 {
-    "javascript": [
-        "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/controller.js"
-    ]
+  "javascript": [
+    "/App_Plugins/Our.Umbraco.GridSettings/directives/CheckRadioList/directive.js",
+    "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/controller.js",
+    "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundRepeat/controller.js"
+  ]
 }

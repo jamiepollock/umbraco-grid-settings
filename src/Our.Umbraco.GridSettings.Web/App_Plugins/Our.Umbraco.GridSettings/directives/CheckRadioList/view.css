@@ -1,0 +1,23 @@
+﻿.gridsettings--checkradiolist .item {
+    cursor: pointer;
+}
+
+.gridsettings--checkradiolist .icon {
+    color: #808080;
+}
+
+.gridsettings--checkradiolist .info {
+    margin-left: 1.5em;
+}
+
+.gridsettings--checkradiolist .active .icon {
+    color: #ff6a00;
+}
+
+.gridsettings--checkradiolist .active .title {
+    font-weight: bold;
+}
+
+.gridsettings--checkradiolist .description {
+    font-style: italic;
+}

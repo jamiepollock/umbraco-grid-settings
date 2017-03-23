@@ -1,0 +1,11 @@
+﻿<ul class="gridsettings--checkradiolist unstyled">
+    <li ng-repeat="item in options" ng-click="setValue(item.value)" class="item clearfix" ng-class="{'active': isValue(item.value)}">
+        <div class="status pull-left">
+            <i class="icon icon-check"></i>
+        </div>
+        <div class="info">
+            <span class="title">{{item.title}}</span>
+            <p ng-if="item.description" class="description">{{item.description}}</p>
+        </div>
+    </li>
+</ul>

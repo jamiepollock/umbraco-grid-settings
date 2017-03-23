@@ -64,12 +64,17 @@
     <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\package.manifest" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\view.html" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\package.manifest" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\directive.js" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\view.css" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\view.html" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\editors\BackgroundPosition\controller.js" />
-    <Content Include="App_Plugins\editors\BackgroundPosition\view.css" />
-    <Content Include="App_Plugins\editors\BackgroundPosition\view.html" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundPosition\controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundPosition\view.css" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundPosition\view.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
