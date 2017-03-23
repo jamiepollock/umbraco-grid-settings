@@ -22,7 +22,6 @@ See [Usage documentation](docs/Usage.md).
 - [x] Background Repeat
 - [x] Background Position
 - [x] Background Size
-- [ ] Background Color Picker
 
 ### Content Alignment
 - [ ] Text / Content Alignment
@@ -31,6 +30,7 @@ See [Usage documentation](docs/Usage.md).
 
 ### General
 - [ ] General radio check list (with prevalue support)
+- [x] Color Picker
 
 
 ## Bugs & Additions
