@@ -1,0 +1,18 @@
+.gridsettings--background-position .col {
+    background: #808080;
+    width: 3em;
+    height: 3em;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+.gridsettings--background-position .row-bottom .col {
+    margin-bottom: 0em;
+}
+.gridsettings--background-position .col-right {
+    margin-right: 0em;
+}
+.gridsettings--background-position .active {
+    background-color: #df7f48;
+}

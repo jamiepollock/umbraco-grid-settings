@@ -1,0 +1,10 @@
+﻿.gridsettings--colorpicker li {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border: 0.25em solid #ffffff;
+}
+
+    .gridsettings--colorpicker li.active {
+        border-color: #000000;
+    }
