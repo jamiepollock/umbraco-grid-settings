@@ -121,3 +121,24 @@ Here are sample usages of the currently supported property editors. You are not 
     ]
   }
 ```
+
+### Text Align
+
+ - **Typical CSS Property**: text-align
+ - **Supported values**:
+   - left
+   - right
+   - center
+   - justify
+ - **Editor**: Check Radio List
+
+```json
+...
+  {
+    "label": "Set text alignment",
+    "description": "Set text alignment",
+    "key": "text-align",
+    "view": "/App_Plugins/Our.Umbraco.GridSettings/editors/TextAlign/view.html"
+  }
+...
+```

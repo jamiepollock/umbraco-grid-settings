@@ -25,7 +25,7 @@ See [Usage documentation](docs/Usage.md).
 
 ### Content Alignment
 - [ ] Text / Content Alignment
-  - [ ] Horizontal
+  - [x] Horizontal
   - [ ] Vertical
 
 ### General
