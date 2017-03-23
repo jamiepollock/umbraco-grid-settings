@@ -14,8 +14,8 @@ Here are sample usages of the currently supported property editors. You are not 
 
  - **Typical CSS Property**: background-position
  - **Supported values**:
-  - **Vertical**: top, center & bottom
-  - **Horizontal**: left, center & right
+   - **Vertical**: top, center & bottom
+   - **Horizontal**: left, center & right
  - **Editor**: 3 &times; 3 grid
 
 ```json
@@ -33,10 +33,10 @@ Here are sample usages of the currently supported property editors. You are not 
 
  - **Typical CSS Property**: background-repeat
  - **Supported values**:
-  - no-repeat
-  - repeat
-  - repeat-x
-  - repeat-y
+   - no-repeat
+   - repeat
+   - repeat-x
+   - repeat-y
  - **Editor**: Check Radio List
 
 ```json
@@ -54,9 +54,9 @@ Here are sample usages of the currently supported property editors. You are not 
 
  - **Typical CSS Property**: background-size
  - **Supported values**:
-  - auto
-  - cover
-  - contain
+   - auto
+   - cover
+   - contain
  - **Editor**: Check Radio List
 
 ```json
