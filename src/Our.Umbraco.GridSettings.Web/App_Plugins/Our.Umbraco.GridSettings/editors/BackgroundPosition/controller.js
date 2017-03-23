@@ -2,13 +2,12 @@
     'use strict';
 
     var controller = function ($scope, assetsService) {
-        var viewCssPath = "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/view.css";
         var xPositions = ["left", "center", "right"];
         var yPositions = ["top", "center", "bottom"];
 
         $scope.positions = [];
 
-        assetsService.loadCss(viewCssPath);
+        assetsService.loadCss("/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundPosition/view.css");
 
         for (var yIndex = 0; yIndex < yPositions.length; yIndex++) {
             var currentYPosition = yPositions[yIndex];
