@@ -9,9 +9,9 @@ The original idea is inspired by and credited to [@andersburla](https://github.c
 ## Current Property editors
 
 ### Background 
-- [ ] Background Repeat
-- [ ] Background Position
-- [ ] Background Size
+- [x] Background Repeat
+- [x] Background Position
+- [x] Background Size
 - [ ] Background Color Picker
 
 ### Content Alignment
