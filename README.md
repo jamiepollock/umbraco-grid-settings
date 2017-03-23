@@ -6,6 +6,16 @@ The main focus of this project is to provide tools to aid authors in general sty
 
 The original idea is inspired by and credited to [@andersburla](https://github.com/andersburla) & the [Tea Solutions](https://teasolutions.net/) team.
 
+## Installation & usage
+
+Download the package from Our Umbraco or install the nuget package. (links pending inital release)
+
+Alternatively checkout the [latest build artifacts on Appveyor](https://ci.appveyor.com/project/jamiepollock/umbraco-grid-settings/build/artifacts).
+
+### Usage
+
+See [Usage documentation](docs/Usage.md).
+
 ## Current Property editors
 
 ### Background 
@@ -21,6 +31,7 @@ The original idea is inspired by and credited to [@andersburla](https://github.c
 
 ### General
 - [ ] General radio check list (with prevalue support)
+
 
 ## Bugs & Additions
 
