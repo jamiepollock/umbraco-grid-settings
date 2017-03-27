@@ -4,7 +4,8 @@ An Umbraco Package collection of property editors to be used with [Umbraco CMS](
 
 The main focus of this project is to provide tools to aid authors in general styling & alignment of content & background imagery.
 
-The original idea is inspired by and credited to [@andersburla](https://github.com/andersburla) & the [Tea Solutions](https://teasolutions.net/) team.
+## Credit
+The original idea is inspired by and credited to [@andersburla](https://twitter.com/andersburla) & the [Tea Solutions](https://teasolutions.net/) team.
 
 ## Installation & usage
 
