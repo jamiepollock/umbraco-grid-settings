@@ -8,9 +8,11 @@ The original idea is inspired by and credited to [@andersburla](https://github.c
 
 ## Installation & usage
 
-Download the package from Our Umbraco or install the nuget package. (links pending inital release)
+Download the package via one of the following:
 
-Alternatively checkout the [latest build artifacts on Appveyor](https://ci.appveyor.com/project/jamiepollock/umbraco-grid-settings/build/artifacts).
+- NuGet [![NuGet release](https://img.shields.io/nuget/v/Our.Umbraco.GridSettings.svg)](https://www.nuget.org/packages/Our.Umbraco.GridSettings)
+- Our Umbraco [![Our Umbraco project page](https://img.shields.io/badge/our-umbraco-orange.svg)](https://our.umbraco.org/projects/backoffice-extensions/grid-settings/)
+- Appveyor [![Appveyor Build](https://ci.appveyor.com/api/projects/status/wna1x7t9rveb876w?svg=true)](https://ci.appveyor.com/project/jamiepollock/umbraco-grid-settings/build/artifacts)
 
 ### Usage
 
