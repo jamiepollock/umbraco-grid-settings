@@ -1,14 +1,11 @@
 (function () {
     'use strict';
 
-    var controller = function ($scope, assetsService) {
-        assetsService.loadCss("/App_Plugins/Our.Umbraco.GridSettings/editors/ColorPicker/view.css");
-
+    var controller = function ($scope) {
         $scope.colors = [];
 
         for (var prevalueIndex = 0; prevalueIndex < $scope.model.prevalues.length; prevalueIndex++) {
             var prevalue = $scope.model.prevalues[prevalueIndex];
-
 
             if (typeof (prevalue) === 'string') {
                 $scope.colors.push({
