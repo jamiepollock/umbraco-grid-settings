@@ -16,7 +16,7 @@ Here are sample usages of the currently supported property editors. You are not 
  - **Supported values**:
    - **Vertical**: top, center & bottom
    - **Horizontal**: left, center & right
- - **Editor**: 3 &times; 3 grid
+ - **Editor**: 3&times;3 grid
 
 ```json
 ...
@@ -62,8 +62,8 @@ Here are sample usages of the currently supported property editors. You are not 
 ```json
 ...
   {
-    "label": "Set background repetition",
-    "description": "Set background repetition",
+    "label": "Set background size",
+    "description": "Set background size",
     "key": "background-size",
     "view": "/App_Plugins/Our.Umbraco.GridSettings/editors/BackgroundSize/view.html"
   }
