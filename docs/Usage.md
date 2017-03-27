@@ -72,9 +72,9 @@ Here are sample usages of the currently supported property editors. You are not 
 
 ### Color Picker
 
- - **Typical CSS Property**: background-color, color (anything which supports CSS colors)
- - **Supported values**: Developer provided prevalues (see below). The value or string must be a valid CSS color value.
- - **Editor**: Simple color picker
+ - **Typical CSS Property**: background-color, color (anything which expects a hexcode color)
+ - **Supported values**: Developer provided prevalues (see below). The value or string must be a valid hexcode color value. Non-hexcode color values are not supported.
+ - **Editor**: Simple color picker (reupurposing the Approved Color Picker editor)
 
 **Note**: Prior to v7.5.4 grid prevalues only supported a string array. From v7.5.4+ prevalues support a mixture of label/value objects and strings.
 
