@@ -142,3 +142,44 @@ Here are sample usages of the currently supported property editors. You are not 
   }
 ...
 ```
+
+### Class Color Picker
+
+Class Color Picker is for cases where an developer will want to return a class value rather than a hexcode color.
+
+This could be used in cases where the hexcode color is simply a representation of the idea of what that class looks like.
+
+Basicially it will return "green" rather than "#00ff00" as its value. This means the label & value are switched from what is used in the Color Picker property editor.
+
+ - **Typical CSS Property**: class
+ - **Supported values**: Developer provided prevalues (see below).
+   - label: A valid hexcode color value. Non-hexcode color values are not supported.
+   - value: The class value to be rendered in Grid markup
+ - **Editor**: Simple color picker (reupurposing the Approved Color Picker editor)
+
+**Note**: This property editor only supports key value pair prevalues and there is only available for Umbraco v7.5.4. Providing string values will produce a handled error.
+
+#### Background Color Picker
+
+```json
+  {
+    "label": "Set background color",
+    "description": "Set the row background color",
+    "key": "background-color",
+    "view": "/App_Plugins/Our.Umbraco.GridSettings/editors/ClassColorPicker/view.html",
+    "prevalues": [
+      {
+        "label": "#0000ff",
+        "value": "Blue"
+      },
+      {
+        "label": "#00ff00",
+        "value": "Green"
+      },
+      {
+        "label": "#ff0000",
+        "value": "Red"
+      }
+    ]
+  },
+```
