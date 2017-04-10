@@ -1,0 +1,9 @@
+<div ng-controller="Our.Umbraco.GridSettings.ClassColorPickerController">
+    <ul class="thumbnails color-picker">
+        <li ng-repeat="item in colors" ng-class="{active: isValue(item.value)}" title="{{item.value}}">
+            <a ng-click="setValue(item.value)" class="thumbnail" hex-bg-color="{{item.label}}">
+                <!-- -->
+            </a>
+        </li>
+    </ul>
+</div>

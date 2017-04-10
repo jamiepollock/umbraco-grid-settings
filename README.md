@@ -4,13 +4,18 @@ An Umbraco Package collection of property editors to be used with [Umbraco CMS](
 
 The main focus of this project is to provide tools to aid authors in general styling & alignment of content & background imagery.
 
-The original idea is inspired by and credited to [@andersburla](https://github.com/andersburla) & the [Tea Solutions](https://teasolutions.net/) team.
+## Credit
+The original idea is inspired by and credited to [@andersburla](https://twitter.com/andersburla) & the [Tea Solutions](https://teasolutions.net/) team.
 
 ## Installation & usage
 
-Download the package from Our Umbraco or install the nuget package. (links pending inital release)
+Download the package via one of the following:
 
-Alternatively checkout the [latest build artifacts on Appveyor](https://ci.appveyor.com/project/jamiepollock/umbraco-grid-settings/build/artifacts).
+- NuGet [![NuGet release](https://img.shields.io/nuget/v/Our.Umbraco.GridSettings.svg)](https://www.nuget.org/packages/Our.Umbraco.GridSettings)
+- Our Umbraco [![Our Umbraco project page](https://img.shields.io/badge/our-umbraco-orange.svg)](https://our.umbraco.org/projects/backoffice-extensions/grid-settings/)
+- Appveyor [![Appveyor Build](https://ci.appveyor.com/api/projects/status/wna1x7t9rveb876w?svg=true)](https://ci.appveyor.com/project/jamiepollock/umbraco-grid-settings/build/artifacts)
+
+**Note:** Version 0.2.0+ will only be compatible with Umbraco v7.5.4.
 
 ### Usage
 

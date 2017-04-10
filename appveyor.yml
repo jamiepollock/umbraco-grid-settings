@@ -1,7 +1,7 @@
 os: Visual Studio 2015
 
 # Version format
-version: 0.1.1.{build}
+version: 0.2.0.{build}
 
 cache:
   - src\packages -> **\packages.config   # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
@@ -14,7 +14,6 @@ branches:
 # UMBRACO_PACKAGE_PRERELEASE_SUFFIX if a rtm release build this should be blank, otherwise if empty will default to alpha
 # example UMBRACO_PACKAGE_PRERELEASE_SUFFIX=beta
 init:
-  - set UMBRACO_PACKAGE_PRERELEASE_SUFFIX=beta
 
 build_script:
 - build-appveyor.cmd
