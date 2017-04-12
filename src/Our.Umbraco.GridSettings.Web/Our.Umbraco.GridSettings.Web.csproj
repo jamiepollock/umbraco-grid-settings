@@ -64,6 +64,8 @@
     <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\ResetButton\directive.js" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\ResetButton\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\controller.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundSize\controller.js" />
@@ -74,6 +76,8 @@
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\ColorPicker\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\TextAlign\controller.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\TextAlign\view.html" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\lang\en-GB.xml" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\lang\en-US.xml" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\package.manifest" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\directive.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\directives\CheckRadioList\view.css" />
