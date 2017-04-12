@@ -1,4 +1,8 @@
-﻿.gridsettings--checkradiolist .item {
+﻿.gridsettings--checkradiolist {
+    margin-bottom: 10px;
+}
+
+.gridsettings--checkradiolist .item {
     cursor: pointer;
 }
 
