@@ -68,6 +68,8 @@
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundRepeat\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundSize\controller.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\BackgroundSize\view.html" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\ClassColorPicker\controller.js" />
+    <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\ClassColorPicker\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\ColorPicker\controller.js" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\ColorPicker\view.html" />
     <Content Include="App_Plugins\Our.Umbraco.GridSettings\editors\TextAlign\controller.js" />
