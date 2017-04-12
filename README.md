@@ -15,7 +15,7 @@ Download the package via one of the following:
 - Our Umbraco [![Our Umbraco project page](https://img.shields.io/badge/our-umbraco-orange.svg)](https://our.umbraco.org/projects/backoffice-extensions/grid-settings/)
 - Appveyor [![Appveyor Build](https://ci.appveyor.com/api/projects/status/wna1x7t9rveb876w?svg=true)](https://ci.appveyor.com/project/jamiepollock/umbraco-grid-settings/build/artifacts)
 
-**Note:** Version 0.2.0+ will only be compatible with Umbraco v7.5.4.
+**Note:** Version 0.2.0+ will only be compatible with Umbraco v7.5.4 minimum.
 
 ### Usage
 
