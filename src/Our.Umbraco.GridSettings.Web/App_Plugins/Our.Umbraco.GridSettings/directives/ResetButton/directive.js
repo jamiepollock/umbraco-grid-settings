@@ -13,11 +13,11 @@
             scope.resetValue = function () {
                 scope.model = scope.defaultValue;
             }
-            scope.isDisabled = function () {
-                var hasNoValue = typeof (scope.model) === 'undefined';
+            scope.isVisible = function () {
+                var hasValue = typeof (scope.model) !== 'undefined';
                 var valueEqualsDefaultValue = scope.model === scope.defaultValue;
 
-                return hasNoValue && (valueEqualsDefaultValue == false);
+                return hasValue && (valueEqualsDefaultValue === false);
             }
         }
 
