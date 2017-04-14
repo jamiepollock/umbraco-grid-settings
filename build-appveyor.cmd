@@ -4,4 +4,4 @@ ECHO APPVEYOR_BUILD_NUMBER : %APPVEYOR_BUILD_NUMBER%
 ECHO APPVEYOR_BUILD_VERSION : %APPVEYOR_BUILD_VERSION%
 
 CALL build\tools\NuGet.exe restore src\Our.Umbraco.GridSettings.sln
-CALL "%programfiles(x86)%\MSBuild\15.0\Bin\MsBuild.exe" build\build.proj
+CALL "%programfiles(x86)%\MSBuild\14.0\Bin\MsBuild.exe" build\build.proj
