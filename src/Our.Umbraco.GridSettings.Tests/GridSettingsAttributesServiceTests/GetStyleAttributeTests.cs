@@ -6,7 +6,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
 {
     public class GetStyleAttributeTests
     {
-        private const string validJsonWithStylesAndConfig = @"{
+        private const string validJson = @"{
           ""styles"": {
             ""background-position"": ""right top"",
             ""background-repeat"": ""no-repeat""
@@ -17,7 +17,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
         public void GivenValidConfiguration_ReturnValidAttribute()
         {
             // Arrange
-            var contentItem = JObject.Parse(validJsonWithStylesAndConfig);
+            var contentItem = JObject.Parse(validJson);
             var service = new GridSettingsAttributesService();
 
             // Act
