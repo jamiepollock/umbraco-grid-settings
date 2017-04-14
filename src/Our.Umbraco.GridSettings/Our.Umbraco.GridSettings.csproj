@@ -201,6 +201,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyValuePairExtensions.cs" />
     <Compile Include="Services\GridSettingsAttributesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
