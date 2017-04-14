@@ -11,6 +11,28 @@ namespace Our.Umbraco.GridSettings.Services
             var attributes = new Dictionary<string, string>();
 
             //get style attribute
+            var styleAttribute = GetStyleAttribute(contentItem);
+
+            if (styleAttribute.IsValid())
+            {
+                attributes.Add(styleAttribute.Key, styleAttribute.Value);
+            }
+
+            //get settings attributes
+            var settingsConfig = contentItem.Value<JObject>("config");
+            if (settingsConfig != null)
+            {
+                foreach (var property in settingsConfig.Properties())
+                {
+                    attributes.Add(property.Name, property.Value.ToString());
+                }
+            }
+
+            return attributes;
+        }
+
+        public KeyValuePair<string, string> GetStyleAttribute(JObject contentItem)
+        {
             var stylesConfig = contentItem.Value<JObject>("styles");
             if (stylesConfig != null)
             {
@@ -27,21 +49,11 @@ namespace Our.Umbraco.GridSettings.Services
 
                 if (cssValues.Any())
                 {
-                    attributes.Add("style", string.Join(" ", cssValues));
+                    return new KeyValuePair<string, string>("style", string.Join(" ", cssValues));
                 }
             }
 
-            //get settings attributes
-            var settingsConfig = contentItem.Value<JObject>("config");
-            if (settingsConfig != null)
-            {
-                foreach (var property in settingsConfig.Properties())
-                {
-                    attributes.Add(property.Name, property.Value.ToString());
-                }
-            }
-
-            return attributes;
+            return default(KeyValuePair<string, string>);
         }
     }
 }
