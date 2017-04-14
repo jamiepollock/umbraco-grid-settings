@@ -1,12 +1,19 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using Our.Umbraco.GridSettings.ValueResolvers;
 
 namespace Our.Umbraco.GridSettings.Services
 {
     public class GridSettingsAttributesService
     {
+        private readonly IGridSettingsAttributesResolver _attributesResolver;
+        
+        public GridSettingsAttributesService(IGridSettingsAttributesResolver attributesResolver = null)
+        {
+            _attributesResolver = attributesResolver;
+        }
+
         public IDictionary<string, string> GetAllAttributes(JObject contentItem)
         {
             var attributes = new Dictionary<string, string>();            
@@ -33,9 +40,10 @@ namespace Our.Umbraco.GridSettings.Services
 
             if (settingsConfig != null)
             {
-                foreach (var property in settingsConfig.Properties())
+                foreach (var property in ResolveAttributes(settingsConfig.Properties()))
                 {
-                    var attribute = new KeyValuePair<string, string>(property.Name, property.Value.ToString());
+                    var value = string.Join(" ", property.Select(x => x.Value));
+                    var attribute = new KeyValuePair<string, string>(property.Key, value);
 
                     if (attribute.IsValid())
                     {
@@ -45,6 +53,16 @@ namespace Our.Umbraco.GridSettings.Services
             }
 
             return attributes;
+        }
+
+        private IEnumerable<IGrouping<string, JProperty>> ResolveAttributes(IEnumerable<JProperty> properties)
+        {
+            if(_attributesResolver != null)
+            {
+                return _attributesResolver.ResolveSettingsAttributes(properties);
+            }
+
+            return properties.GroupBy(x => x.Name);
         }
 
         public KeyValuePair<string, string> GetStyleAttribute(JObject contentItem)
