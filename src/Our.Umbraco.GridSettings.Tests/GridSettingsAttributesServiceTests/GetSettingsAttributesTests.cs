@@ -44,7 +44,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
 
 
         [Test]
-        public void GivenConfigurationWithBlankKeyOrValues_ReturnOnlyValidAttribute()
+        public void GivenConfigurationWithBlankKeyOrValues_ReturnOnlyValidAttributes()
         {
             // Arrange
             var contentItem = JObject.Parse(validJson);
