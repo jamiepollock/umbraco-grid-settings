@@ -6,9 +6,10 @@ namespace Our.Umbraco.GridSettings
     {
         public static bool IsValid(this KeyValuePair<string, string> entry)
         {
-            return (string.IsNullOrWhiteSpace(entry.Key) &&
-                    string.IsNullOrWhiteSpace(entry.Value))
-                    == false;
+            var hasKey = string.IsNullOrWhiteSpace(entry.Key) == false;
+            var hasValue = string.IsNullOrWhiteSpace(entry.Value) == false;
+
+            return hasKey && hasValue;
         }
     }
 }
