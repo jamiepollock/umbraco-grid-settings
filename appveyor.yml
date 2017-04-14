@@ -16,6 +16,10 @@ branches:
 init:
   - set UMBRACO_PACKAGE_PRERELEASE_SUFFIX=beta 
 
+test:
+  assemblies:
+    - 'Our.Umbraco.GridSettings.Tests.dll'
+
 build_script:
 - build-appveyor.cmd
 
