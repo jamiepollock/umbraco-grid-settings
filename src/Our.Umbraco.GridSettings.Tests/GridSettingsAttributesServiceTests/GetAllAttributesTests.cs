@@ -2,10 +2,10 @@
 using NUnit.Framework;
 using Our.Umbraco.GridSettings.Services;
 
-namespace Our.Umbraco.GridSettings.Tests
+namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
 {
     [TestFixture]
-    public class GridSettingsAttributesServiceTests
+    public class GetAllAttributesTests
     {
         private const string validJsonWithStylesAndConfig = @"{
           ""styles"": {
