@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Our.Umbraco.GridSettings.Services
 {
@@ -8,23 +9,38 @@ namespace Our.Umbraco.GridSettings.Services
     {
         public IDictionary<string, string> GetAllAttributes(JObject contentItem)
         {
-            var attributes = new Dictionary<string, string>();
-
-            //get style attribute
+            var attributes = new Dictionary<string, string>();            
             var styleAttribute = GetStyleAttribute(contentItem);
+            var settingsAttributes = GetSettingsAttributes(contentItem);
 
             if (styleAttribute.IsValid())
             {
                 attributes.Add(styleAttribute.Key, styleAttribute.Value);
             }
 
-            //get settings attributes
+            foreach(var attribute in settingsAttributes)
+            {
+                attributes.Add(attribute.Key, attribute.Value);
+            }
+
+            return attributes;
+        }
+
+        public IDictionary<string, string> GetSettingsAttributes(JObject contentItem)
+        {
+            var attributes = new Dictionary<string, string>();
             var settingsConfig = contentItem.Value<JObject>("config");
+
             if (settingsConfig != null)
             {
                 foreach (var property in settingsConfig.Properties())
                 {
-                    attributes.Add(property.Name, property.Value.ToString());
+                    var attribute = new KeyValuePair<string, string>(property.Name, property.Value.ToString());
+
+                    if (attribute.IsValid())
+                    {
+                        attributes.Add(attribute.Key, attribute.Value);
+                    }
                 }
             }
 

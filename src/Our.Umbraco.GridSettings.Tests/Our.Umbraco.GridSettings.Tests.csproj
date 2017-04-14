@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GridSettingsAttributesServiceTests\GetAllAttributesTests.cs" />
+    <Compile Include="GridSettingsAttributesServiceTests\GetSettingsAttributesTests.cs" />
     <Compile Include="GridSettingsAttributesServiceTests\GetStyleAttributeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
