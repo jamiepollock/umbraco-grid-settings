@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.GridSettings.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.GridSettings", "Our.Umbraco.GridSettings\Our.Umbraco.GridSettings.csproj", "{05A8D9EC-A36A-455E-B28A-ED7F4F6A5B2E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{2FA73200-A320-4A5D-95AE-B0D181F28A19}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+		..\build-appveyor.cmd = ..\build-appveyor.cmd
+		..\build.cmd = ..\build.cmd
+		..\build\build.proj = ..\build\build.proj
+		..\build\package.nuspec = ..\build\package.nuspec
+		..\build\package.xml = ..\build\package.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
