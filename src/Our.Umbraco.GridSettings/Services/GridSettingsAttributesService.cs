@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json.Linq;
+using Our.Umbraco.GridSettings.ValueResolvers;
 using System.Collections.Generic;
 using System.Linq;
-using Our.Umbraco.GridSettings.ValueResolvers;
 
 namespace Our.Umbraco.GridSettings.Services
 {
-    public class GridSettingsAttributesService
+    public sealed class GridSettingsAttributesService : IGridSettingsAttributesService
     {
         private readonly IGridSettingsAttributesResolver _attributesResolver;
         private readonly IGridSettingsAttributeValueResolver _defaultAttributeValueResolver;
