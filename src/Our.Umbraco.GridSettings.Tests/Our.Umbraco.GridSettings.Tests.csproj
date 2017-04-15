@@ -199,6 +199,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeValueResolverTests\StringConcatTests.cs" />
     <Compile Include="GridSettingsAttributesServiceTests\GetAllAttributesTests.cs" />
     <Compile Include="GridSettingsAttributesServiceTests\GetSettingsAttributesTests.cs" />
     <Compile Include="GridSettingsAttributesServiceTests\GetStyleAttributeTests.cs" />
