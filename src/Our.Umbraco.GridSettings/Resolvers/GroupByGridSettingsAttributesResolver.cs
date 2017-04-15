@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Our.Umbraco.GridSettings.Resolvers
 {
     public abstract class GroupByGridSettingsAttributesResolver : IGridSettingsAttributesResolver
     {
-        public IDictionary<string, IEnumerable<JProperty>> ResolveSettingsAttributes(IEnumerable<JProperty> properties)
+        public IDictionary<string, IDictionary<string, string>> ResolveSettingsAttributes(IDictionary<string, string> properties)
         {
             var groupedProperties = GroupProperties(properties);
 
-            return groupedProperties.ToDictionary(g => g.Key,
-                                                  g => g.Select(x => x));
+            var resolvedProperties = new Dictionary<string, IDictionary<string, string>>();
+
+
+            foreach (var groupedProperty in groupedProperties)
+            {
+                var values = groupedProperty.ToDictionary(x => x.Key, x => x.Value);
+                resolvedProperties.Add(groupedProperty.Key, values);
+            }
+
+            return resolvedProperties;
         }
 
-        protected abstract IEnumerable<IGrouping<string, JProperty>> GroupProperties(IEnumerable<JProperty> properties);
+        protected abstract IEnumerable<IGrouping<string, KeyValuePair<string, string>>> GroupProperties(IDictionary<string, string> properties);
     }
 }

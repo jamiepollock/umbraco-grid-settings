@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Our.Umbraco.GridSettings.Services
 {
-    public sealed class GridSettingsAttributesService : IGridSettingsAttributesService
+    public sealed class GridSettingsAttributesService : IGridSettingsAttributesService<JObject>
     {
         private readonly IGridSettingsAttributesResolver _attributesResolver;
         private readonly IGridSettingsAttributeValueResolver _defaultAttributeValueResolver;
@@ -13,7 +13,7 @@ namespace Our.Umbraco.GridSettings.Services
 
         public GridSettingsAttributesService(IGridSettingsAttributesResolver attributesResolver = null, IGridSettingsAttributeValueResolver defaultAttributeValueResolver = null, IDictionary<string, IGridSettingsAttributeValueResolver> attributeValueResolvers = null)
         {
-            _attributesResolver = attributesResolver ?? new GroupByNameGridSettingsAttributesResolver();
+            _attributesResolver = attributesResolver ?? new GroupByKeyGridSettingsAttributesResolver();
             _defaultAttributeValueResolver = defaultAttributeValueResolver ?? new StringConcatGridSettingValueResolver();
             _attributeValueResolvers = attributeValueResolvers ?? new Dictionary<string, IGridSettingsAttributeValueResolver>();
         }
@@ -44,7 +44,9 @@ namespace Our.Umbraco.GridSettings.Services
 
             if (settingsConfig != null)
             {
-                foreach (var property in ResolveAttributes(settingsConfig.Properties()))
+                var properties = settingsConfig.Properties().ToDictionary(x => x.Name, x => x.Value.ToString());
+
+                foreach (var property in ResolveAttributes(properties))
                 {
                     var value = ResolveSettingValue(property);
                     var attribute = new KeyValuePair<string, string>(property.Key, value);
@@ -59,7 +61,7 @@ namespace Our.Umbraco.GridSettings.Services
             return attributes;
         }
 
-        private IDictionary<string, IEnumerable<JProperty>> ResolveAttributes(IEnumerable<JProperty> properties)
+        private IDictionary<string, IDictionary<string, string>> ResolveAttributes(IDictionary<string, string> properties)
         {
             return _attributesResolver.ResolveSettingsAttributes(properties);
         }
@@ -90,7 +92,7 @@ namespace Our.Umbraco.GridSettings.Services
         }
 
 
-        public string ResolveSettingValue(KeyValuePair<string, IEnumerable<JProperty>> property)
+        public string ResolveSettingValue(KeyValuePair<string, IDictionary<string, string>> property)
         {
             IGridSettingsAttributeValueResolver resolver = null;
 

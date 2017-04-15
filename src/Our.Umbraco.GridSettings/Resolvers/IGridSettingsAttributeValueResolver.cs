@@ -1,10 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Our.Umbraco.GridSettings.Resolvers
 {
     public interface IGridSettingsAttributeValueResolver
     {
-        string ResolveAttributeValue(KeyValuePair<string, IEnumerable<JProperty>> property);
+        string ResolveAttributeValue(KeyValuePair<string, IDictionary<string, string>> property);
     }
 }

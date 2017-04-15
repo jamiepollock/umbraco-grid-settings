@@ -1,16 +1,15 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Our.Umbraco.GridSettings.Services
 {
-    public interface IGridSettingsAttributesService
+    public interface IGridSettingsAttributesService<TModel>
     {
-        IDictionary<string, string> GetAllAttributes(JObject contentItem);
+        IDictionary<string, string> GetAllAttributes(TModel contentItem);
 
-        IDictionary<string, string> GetSettingsAttributes(JObject contentItem);
+        IDictionary<string, string> GetSettingsAttributes(TModel contentItem);
 
-        KeyValuePair<string, string> GetStyleAttribute(JObject contentItem);
+        KeyValuePair<string, string> GetStyleAttribute(TModel contentItem);
 
-        string ResolveSettingValue(KeyValuePair<string, IEnumerable<JProperty>> property);
+        string ResolveSettingValue(KeyValuePair<string, IDictionary<string, string>> property);
     }
 }

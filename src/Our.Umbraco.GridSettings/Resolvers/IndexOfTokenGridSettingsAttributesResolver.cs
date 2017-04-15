@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Our.Umbraco.GridSettings.Resolvers
@@ -18,10 +17,9 @@ namespace Our.Umbraco.GridSettings.Resolvers
         {
             _token = token;
         }
-
-        protected override IEnumerable<IGrouping<string, JProperty>> GroupProperties(IEnumerable<JProperty> properties)
+        protected override IEnumerable<IGrouping<string, KeyValuePair<string, string>>> GroupProperties(IDictionary<string, string> properties)
         {
-            return properties.GroupBy(x => SplitByTokenIfItExists(x.Name));
+            return properties.GroupBy(x => SplitByTokenIfItExists(x.Key));
         }
 
         private string SplitByTokenIfItExists(string name)

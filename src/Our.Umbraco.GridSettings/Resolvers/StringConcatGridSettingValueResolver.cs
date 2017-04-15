@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Our.Umbraco.GridSettings.Resolvers
@@ -13,7 +12,7 @@ namespace Our.Umbraco.GridSettings.Resolvers
             _separator = separator;
         }
 
-        public string ResolveAttributeValue(KeyValuePair<string, IEnumerable<JProperty>> property)
+        public string ResolveAttributeValue(KeyValuePair<string, IDictionary<string, string>> property)
         {
             var values = property.Value.Select(x => x.Value.ToString());
 
