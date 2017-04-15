@@ -20,9 +20,20 @@ namespace Our.Umbraco.GridSettings.Web
         /// <returns>A <see cref="MvcHtmlString" /> containing all the resolved attributes with their values.</returns>
         public static MvcHtmlString RenderGridSettingAttributes(this HtmlHelper helper, JObject contentItem, IGridSettingsAttributesResolver attributesResolver = null, IDictionary<string, IGridSettingsAttributeValueResolver> attributeValueResolvers = null, IGridSettingsAttributeValueResolver defaultAttributeValueResolver = null)
         {
-            var gridSettingsService = new GridSettingsAttributesService(attributesResolver, defaultAttributeValueResolver, attributeValueResolvers);
+            var attributesService = new GridSettingsAttributesService(attributesResolver, defaultAttributeValueResolver, attributeValueResolvers);
 
-            var attributes = gridSettingsService.GetAllAttributes(contentItem);
+            return helper.RenderGridSettingAttributes(contentItem, attributesService);
+        }
+        /// <summary>
+        /// Renders the Settings &amp; Styles associated with the current <see cref="JObject"/>.
+        /// </summary>
+        /// <param name="helper">The <see cref="HtmlHelper"/> instance.</param>
+        /// <param name="contentItem">The <see cref="JObject"/> item which holds the configuration for Settings & Styles. This is typically an area or row in the Umbraco Grid.</param>
+        /// <param name="attributesService">An <see cref="IGridSettingsAttributesService" /> which handles the resolution of attributes.</param>
+        /// <returns>A <see cref="MvcHtmlString" /> containing all the resolved attributes with their values.</returns>
+        public static MvcHtmlString RenderGridSettingAttributes(this HtmlHelper helper, JObject contentItem, IGridSettingsAttributesService attributesService)
+        {
+            var attributes = attributesService.GetAllAttributes(contentItem);
 
             var output = new StringBuilder();
             foreach (var attribute in attributes)
