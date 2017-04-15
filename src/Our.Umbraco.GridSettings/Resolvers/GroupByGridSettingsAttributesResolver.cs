@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace Our.Umbraco.GridSettings.Resolvers
 {
+    /// <summary>
+    /// An abstract implementation of <see cref="IGridSettingsAttributesResolver"/> which provides a basis for grouping attributes together.
+    /// </summary>
     public abstract class GroupByGridSettingsAttributesResolver : IGridSettingsAttributesResolver
     {
         public IDictionary<string, IDictionary<string, string>> ResolveSettingsAttributes(IDictionary<string, string> properties)

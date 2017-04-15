@@ -4,7 +4,7 @@ using System.Linq;
 namespace Our.Umbraco.GridSettings.Resolvers
 {
     /// <summary>
-    /// An <see cref="IGridSettingsAttributesResolver"/> which looks for a specific token in an Attribute name. If found it will group all found <see cref="JProperty"/> together under this name.
+    /// An <see cref="IGridSettingsAttributesResolver"/> which looks for a specific token in an Attribute name. If found it will group all found attributes together under this name.
     /// </summary>
     public sealed class GroupByPrefixTokenGridSettingsAttributesResolver : GroupByGridSettingsAttributesResolver
     {
