@@ -26,12 +26,12 @@ namespace Our.Umbraco.GridSettings.Services
 
             if (styleAttribute.IsValid())
             {
-                attributes.Add(styleAttribute.Key, styleAttribute.Value);
+                attributes.AddKeyValuePair(styleAttribute);
             }
 
             foreach(var attribute in settingsAttributes)
             {
-                attributes.Add(attribute.Key, attribute.Value);
+                attributes.AddKeyValuePair(attribute);
             }
 
             return attributes;
@@ -51,7 +51,7 @@ namespace Our.Umbraco.GridSettings.Services
 
                     if (attribute.IsValid())
                     {
-                        attributes.Add(attribute.Key, attribute.Value);
+                        attributes.AddKeyValuePair(attribute);
                     }
                 }
             }

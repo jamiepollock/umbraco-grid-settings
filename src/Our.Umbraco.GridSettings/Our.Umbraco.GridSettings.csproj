@@ -209,6 +209,7 @@
     <Compile Include="ValueResolvers\IGridSettingsAttributeValueResolver.cs" />
     <Compile Include="ValueResolvers\IndexOfTokenGridSettingsAttributesResolver.cs" />
     <Compile Include="ValueResolvers\StringConcatGridSettingValueResolver.cs" />
+    <Compile Include="Web\HtmlHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
