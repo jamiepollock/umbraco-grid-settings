@@ -205,12 +205,12 @@
     <Compile Include="KeyValuePairExtensions.cs" />
     <Compile Include="Resolvers\GroupByGridSettingsAttributesResolver.cs" />
     <Compile Include="Resolvers\GroupByKeyGridSettingsAttributesResolver.cs" />
+    <Compile Include="Resolvers\GroupByPrefixTokenGridSettingsAttributesResolver.cs" />
     <Compile Include="Services\GridSettingsAttributesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IGridSettingsAttributesService.cs" />
     <Compile Include="Resolvers\IGridSettingsAttributesResolver.cs" />
     <Compile Include="Resolvers\IGridSettingsAttributeValueResolver.cs" />
-    <Compile Include="Resolvers\IndexOfTokenGridSettingsAttributesResolver.cs" />
     <Compile Include="Resolvers\StringConcatGridSettingValueResolver.cs" />
     <Compile Include="Web\HtmlHelperExtensions.cs" />
   </ItemGroup>
