@@ -7,7 +7,7 @@ namespace Our.Umbraco.GridSettings.Resolvers
     /// <summary>
     /// An <see cref="IGridSettingsAttributesResolver"/> which looks for a specific token in an Attribute name. If found it will group all found <see cref="JProperty"/> together under this name.
     /// </summary>
-    public sealed class IndexOfTokenGridSettingsAttributesResolver : IGridSettingsAttributesResolver
+    public sealed class IndexOfTokenGridSettingsAttributesResolver : GroupByGridSettingsAttributesResolver
     {
         private readonly string _token;
         /// <summary>
@@ -19,12 +19,7 @@ namespace Our.Umbraco.GridSettings.Resolvers
             _token = token;
         }
 
-        /// <summary>
-        /// Groups a collection of <see cref="IEnumerable{JProperty}" /> by their Name.
-        /// </summary>
-        /// <param name="properties">The original collection of <see cref="IEnumerable{JProperty}" /></param>
-        /// <returns>A collection of <see cref="IEnumerable{JProperty}" /> by grouped their Name.</returns>
-        public IEnumerable<IGrouping<string, JProperty>> ResolveSettingsAttributes(IEnumerable<JProperty> properties)
+        protected override IEnumerable<IGrouping<string, JProperty>> GroupProperties(IEnumerable<JProperty> properties)
         {
             return properties.GroupBy(x => SplitByTokenIfItExists(x.Name));
         }

@@ -13,7 +13,7 @@ namespace Our.Umbraco.GridSettings.Services
 
         public GridSettingsAttributesService(IGridSettingsAttributesResolver attributesResolver = null, IGridSettingsAttributeValueResolver defaultAttributeValueResolver = null, IDictionary<string, IGridSettingsAttributeValueResolver> attributeValueResolvers = null)
         {
-            _attributesResolver = attributesResolver;
+            _attributesResolver = attributesResolver ?? new GroupByNameGridSettingsAttributesResolver();
             _defaultAttributeValueResolver = defaultAttributeValueResolver ?? new StringConcatGridSettingValueResolver();
             _attributeValueResolvers = attributeValueResolvers ?? new Dictionary<string, IGridSettingsAttributeValueResolver>();
         }
@@ -59,14 +59,9 @@ namespace Our.Umbraco.GridSettings.Services
             return attributes;
         }
 
-        private IEnumerable<IGrouping<string, JProperty>> ResolveAttributes(IEnumerable<JProperty> properties)
+        private IDictionary<string, IEnumerable<JProperty>> ResolveAttributes(IEnumerable<JProperty> properties)
         {
-            if(_attributesResolver != null)
-            {
-                return _attributesResolver.ResolveSettingsAttributes(properties);
-            }
-
-            return properties.GroupBy(x => x.Name);
+            return _attributesResolver.ResolveSettingsAttributes(properties);
         }
 
         public KeyValuePair<string, string> GetStyleAttribute(JObject contentItem)
@@ -95,7 +90,7 @@ namespace Our.Umbraco.GridSettings.Services
         }
 
 
-        public string ResolveSettingValue(IGrouping<string, JProperty> property)
+        public string ResolveSettingValue(KeyValuePair<string, IEnumerable<JProperty>> property)
         {
             IGridSettingsAttributeValueResolver resolver = null;
 

@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Our.Umbraco.GridSettings.Services
 {
@@ -12,6 +11,6 @@ namespace Our.Umbraco.GridSettings.Services
 
         KeyValuePair<string, string> GetStyleAttribute(JObject contentItem);
 
-        string ResolveSettingValue(IGrouping<string, JProperty> property);
+        string ResolveSettingValue(KeyValuePair<string, IEnumerable<JProperty>> property);
     }
 }

@@ -6,6 +6,6 @@ namespace Our.Umbraco.GridSettings.Resolvers
 {
     public interface IGridSettingsAttributesResolver
     {
-        IEnumerable<IGrouping<string, JProperty>> ResolveSettingsAttributes(IEnumerable<JProperty> properties);
+        IDictionary<string, IEnumerable<JProperty>> ResolveSettingsAttributes(IEnumerable<JProperty> properties);
     }
 }
