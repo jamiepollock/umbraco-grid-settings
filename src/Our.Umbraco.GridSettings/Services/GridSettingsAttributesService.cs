@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using Our.Umbraco.GridSettings.ValueResolvers;
+using Our.Umbraco.GridSettings.Resolvers;
 using System.Collections.Generic;
 using System.Linq;
 

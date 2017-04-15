@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Our.Umbraco.GridSettings.ValueResolvers
+namespace Our.Umbraco.GridSettings.Resolvers
 {
     public interface IGridSettingsAttributesResolver
     {

@@ -206,10 +206,10 @@
     <Compile Include="Services\GridSettingsAttributesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IGridSettingsAttributesService.cs" />
-    <Compile Include="ValueResolvers\IGridSettingsAttributesResolver.cs" />
-    <Compile Include="ValueResolvers\IGridSettingsAttributeValueResolver.cs" />
-    <Compile Include="ValueResolvers\IndexOfTokenGridSettingsAttributesResolver.cs" />
-    <Compile Include="ValueResolvers\StringConcatGridSettingValueResolver.cs" />
+    <Compile Include="Resolvers\IGridSettingsAttributesResolver.cs" />
+    <Compile Include="Resolvers\IGridSettingsAttributeValueResolver.cs" />
+    <Compile Include="Resolvers\IndexOfTokenGridSettingsAttributesResolver.cs" />
+    <Compile Include="Resolvers\StringConcatGridSettingValueResolver.cs" />
     <Compile Include="Web\HtmlHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using Our.Umbraco.GridSettings.Services;
-using Our.Umbraco.GridSettings.ValueResolvers;
+using Our.Umbraco.GridSettings.Resolvers;
 using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;

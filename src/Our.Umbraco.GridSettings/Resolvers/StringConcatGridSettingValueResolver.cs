@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Linq;
 
-namespace Our.Umbraco.GridSettings.ValueResolvers
+namespace Our.Umbraco.GridSettings.Resolvers
 {
     public class StringConcatGridSettingValueResolver : IGridSettingsAttributeValueResolver
     {
