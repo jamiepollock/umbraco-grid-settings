@@ -1,4 +1,4 @@
-# Usage
+# Property Editors Guide
 
 For the most up to date information on adding additional grid row & column configuration checkout the [Our Umbraco documentation](https://our.umbraco.org/documentation/getting-started/backoffice/property-editors/built-in-property-editors/grid-layout/settings-and-styles).
 
