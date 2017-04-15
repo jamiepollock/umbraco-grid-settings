@@ -8,10 +8,14 @@ namespace Our.Umbraco.GridSettings.Services
     public class GridSettingsAttributesService
     {
         private readonly IGridSettingsAttributesResolver _attributesResolver;
-        
-        public GridSettingsAttributesService(IGridSettingsAttributesResolver attributesResolver = null)
+        private readonly IGridSettingsAttributeValueResolver _defaultAttributeValueResolver;
+        private readonly IDictionary<string, IGridSettingsAttributeValueResolver> _attributeValueResolvers;
+
+        public GridSettingsAttributesService(IGridSettingsAttributesResolver attributesResolver = null, IGridSettingsAttributeValueResolver defaultAttributeValueResolver = null, IDictionary<string, IGridSettingsAttributeValueResolver> attributeValueResolvers = null)
         {
             _attributesResolver = attributesResolver;
+            _defaultAttributeValueResolver = defaultAttributeValueResolver ?? new StringConcatGridSettingValueResolver();
+            _attributeValueResolvers = attributeValueResolvers ?? new Dictionary<string, IGridSettingsAttributeValueResolver>();
         }
 
         public IDictionary<string, string> GetAllAttributes(JObject contentItem)
@@ -42,7 +46,7 @@ namespace Our.Umbraco.GridSettings.Services
             {
                 foreach (var property in ResolveAttributes(settingsConfig.Properties()))
                 {
-                    var value = string.Join(" ", property.Select(x => x.Value));
+                    var value = ResolveSettingValue(property);
                     var attribute = new KeyValuePair<string, string>(property.Key, value);
 
                     if (attribute.IsValid())
@@ -88,6 +92,19 @@ namespace Our.Umbraco.GridSettings.Services
             }
 
             return default(KeyValuePair<string, string>);
+        }
+
+
+        public string ResolveSettingValue(IGrouping<string, JProperty> property)
+        {
+            IGridSettingsAttributeValueResolver resolver = null;
+
+            if (_attributeValueResolvers.TryGetValue(property.Key, out resolver) == false)
+            {
+                resolver = _defaultAttributeValueResolver;
+            }
+
+            return resolver.ResolveAttributeValue(property);
         }
     }
 }

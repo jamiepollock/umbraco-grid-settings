@@ -2,11 +2,7 @@
 using NUnit.Framework;
 using Our.Umbraco.GridSettings.Services;
 using Our.Umbraco.GridSettings.ValueResolvers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
@@ -35,6 +31,27 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
             ""class_color-scheme"": ""color-scheme-red"",
             ""class_padding"": ""padding-medium"",
             ""data-title"": ""My Configuration""
+          }
+        }";
+
+        private const string validJsonWithRelatedKeysAndCsv = @"{
+          ""config"": {
+            ""data-csv_first"": ""first"",
+            ""data-csv_second"": ""second"",
+            ""data-csv_third"": ""third"",
+          }
+        }";
+        private const string validJsonWithMultipleRelatedKeys = @"{
+          ""config"": {
+            ""data-csv_first"": ""first"",
+            ""data-csv_second"": ""second"",
+            ""data-csv_third"": ""third"",
+            ""data-hyphenated_first"": ""first"",
+            ""data-hyphenated_second"": ""second"",
+            ""data-hyphenated_third"": ""third"",
+            ""data-default_first"": ""first"",
+            ""data-default_second"": ""second"",
+            ""data-default_third"": ""third""
           }
         }";
 
@@ -111,6 +128,53 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
 
             // Assert
             Assert.AreEqual(3, attributes.Count);
+        }
+
+
+        [Test]
+        public void GivenConfigurationWithResolvableKeys_and_CsvValueResolver_ReturnAttributesWithCsvConcatanatedValues()
+        {
+            // Arrange
+            var contentItem = JObject.Parse(validJsonWithRelatedKeysAndCsv);
+
+            var attributesResolver = new IndexOfTokenGridSettingsAttributesResolver("_");
+            var defaultValueResolver = new StringConcatGridSettingValueResolver(",");
+            var service = new GridSettingsAttributesService(attributesResolver, defaultValueResolver);
+
+            // Act
+            var attributes = service.GetSettingsAttributes(contentItem);
+
+            // Assert
+            Assert.IsTrue(attributes.ContainsKey("data-csv"));
+            Assert.AreEqual("first,second,third", attributes["data-csv"]);
+        }
+
+        [Test]
+        public void GivenConfigurationWithResolvableKeys_and_MultipleValueResolvers_ReturnAttributesWithConcatanatedValues()
+        {
+            // Arrange
+            var contentItem = JObject.Parse(validJsonWithMultipleRelatedKeys);
+
+            var attributesResolver = new IndexOfTokenGridSettingsAttributesResolver("_");
+            var defaultValueResolver = new StringConcatGridSettingValueResolver(" ");
+            var valueResolvers = new Dictionary<string, IGridSettingsAttributeValueResolver>()
+            {
+                { "data-csv", new StringConcatGridSettingValueResolver(",") },
+                { "data-hyphenated", new StringConcatGridSettingValueResolver("-") }
+            };
+
+            var service = new GridSettingsAttributesService(attributesResolver, defaultValueResolver, valueResolvers);
+
+            // Act
+            var attributes = service.GetSettingsAttributes(contentItem);
+
+            // Assert
+            Assert.IsTrue(attributes.ContainsKey("data-csv"));
+            Assert.IsTrue(attributes.ContainsKey("data-hyphenated"));
+            Assert.IsTrue(attributes.ContainsKey("data-default"));
+            Assert.AreEqual("first,second,third", attributes["data-csv"]);
+            Assert.AreEqual("first-second-third", attributes["data-hyphenated"]);
+            Assert.AreEqual("first second third", attributes["data-default"]);
         }
     }
 }
