@@ -90,7 +90,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
             // Arrange
             var contentItem = JObject.Parse(validJsonWithRelatedKeys);
 
-            var attributesResolver = new IndexOfTokenGridSettingsAttributesResolver("_");
+            var attributesResolver = new GroupByPrefixTokenGridSettingsAttributesResolver("_");
             var service = new GridSettingsAttributesService(attributesResolver);
 
             // Act
@@ -105,7 +105,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
             // Arrange
             var contentItem = JObject.Parse(validJson);
 
-            var attributesResolver = new IndexOfTokenGridSettingsAttributesResolver("_");
+            var attributesResolver = new GroupByPrefixTokenGridSettingsAttributesResolver("_");
             var service = new GridSettingsAttributesService(attributesResolver);
 
             // Act
@@ -137,7 +137,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
             // Arrange
             var contentItem = JObject.Parse(validJsonWithRelatedKeysAndCsv);
 
-            var attributesResolver = new IndexOfTokenGridSettingsAttributesResolver("_");
+            var attributesResolver = new GroupByPrefixTokenGridSettingsAttributesResolver("_");
             var defaultValueResolver = new StringConcatGridSettingValueResolver(",");
             var service = new GridSettingsAttributesService(attributesResolver, defaultValueResolver);
 
@@ -155,7 +155,7 @@ namespace Our.Umbraco.GridSettings.Tests.GridSettingsAttributesServiceTests
             // Arrange
             var contentItem = JObject.Parse(validJsonWithMultipleRelatedKeys);
 
-            var attributesResolver = new IndexOfTokenGridSettingsAttributesResolver("_");
+            var attributesResolver = new GroupByPrefixTokenGridSettingsAttributesResolver("_");
             var defaultValueResolver = new StringConcatGridSettingValueResolver(" ");
             var valueResolvers = new Dictionary<string, IGridSettingsAttributeValueResolver>()
             {

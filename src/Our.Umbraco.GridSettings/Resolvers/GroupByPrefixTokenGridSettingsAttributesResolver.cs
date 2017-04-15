@@ -6,14 +6,14 @@ namespace Our.Umbraco.GridSettings.Resolvers
     /// <summary>
     /// An <see cref="IGridSettingsAttributesResolver"/> which looks for a specific token in an Attribute name. If found it will group all found <see cref="JProperty"/> together under this name.
     /// </summary>
-    public sealed class IndexOfTokenGridSettingsAttributesResolver : GroupByGridSettingsAttributesResolver
+    public sealed class GroupByPrefixTokenGridSettingsAttributesResolver : GroupByGridSettingsAttributesResolver
     {
         private readonly string _token;
         /// <summary>
-        /// Constructs a new <see cref="IndexOfTokenGridSettingsAttributesResolver"/> with a given token.
+        /// Constructs a new <see cref="GroupByPrefixTokenGridSettingsAttributesResolver"/> with a given token.
         /// </summary>
         /// <param name="token">The <see cref="string"/> token of which to look for.</param>
-        public IndexOfTokenGridSettingsAttributesResolver(string token)
+        public GroupByPrefixTokenGridSettingsAttributesResolver(string token)
         {
             _token = token;
         }
