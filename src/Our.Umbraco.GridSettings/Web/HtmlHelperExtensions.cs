@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using Our.Umbraco.GridSettings.Services;
 using Our.Umbraco.GridSettings.Resolvers;
+using Our.Umbraco.GridSettings.Services;
 using System.Collections.Generic;
 using System.Text;
 using System.Web.Mvc;
@@ -25,13 +25,14 @@ namespace Our.Umbraco.GridSettings.Web
             return helper.RenderGridSettingAttributes(contentItem, attributesService);
         }
         /// <summary>
-        /// Renders the Settings &amp; Styles associated with the current <see cref="JObject"/>.
+        /// Renders the Settings &amp; Styles associated with the <paramref name="contentItem"/>.
         /// </summary>
+        /// <typeparam name="TContentItem">The type used for the content item</typeparam>
         /// <param name="helper">The <see cref="HtmlHelper"/> instance.</param>
-        /// <param name="contentItem">The <see cref="JObject"/> item which holds the configuration for Settings & Styles. This is typically an area or row in the Umbraco Grid.</param>
+        /// <param name="contentItem">The item which holds the configuration for Settings & Styles. This is typically an area or row in the Umbraco Grid.</param>
         /// <param name="attributesService">An <see cref="IGridSettingsAttributesService" /> which handles the resolution of attributes.</param>
         /// <returns>A <see cref="MvcHtmlString" /> containing all the resolved attributes with their values.</returns>
-        public static MvcHtmlString RenderGridSettingAttributes(this HtmlHelper helper, JObject contentItem, IGridSettingsAttributesService attributesService)
+        public static MvcHtmlString RenderGridSettingAttributes<TContentItem>(this HtmlHelper helper, TContentItem contentItem, IGridSettingsAttributesService<TContentItem> attributesService)
         {
             var attributes = attributesService.GetAllAttributes(contentItem);
 
