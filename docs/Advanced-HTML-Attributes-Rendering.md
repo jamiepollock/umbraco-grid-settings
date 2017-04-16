@@ -67,6 +67,8 @@ Now add the `attributesResolver` to our HTML helper like so:
 
 ```
 
+**Note**: the *attributesResolver* will probably need to be passed as a parameter into the `renderRow()` helper as variables created at the top of the file will not be in scope to helper functions.
+
 This should now group the values of these properties together into a single class attribute, then concatenate the values together broken up by whitespace.
 
 ``` html
@@ -123,6 +125,12 @@ This should target the data-csv attribute while leaving the class attribute alon
 ### Override the default IGridSettingsAttributeValueResolver
 
 As mentioned above the default `IGridSettingsAttributeValueResolver` can also be overwritten using the *defaultAttributeValueResolver*. Such cases should be carefully considered as this could have implications on our attributes being resolved if no attribute value resolver is set.
+
+### Recommended Usage
+
+IF you're intending to provide multiple overloads to the `@Html.RenderGridSettingsAttributes` it might be a better option to create a `GridSettingsAttributesService` at the top of the razor file with the overloads and pass the service in instead.
+
+For an example of recommended usage have a look at this [gist of Bootstrap3.cshtml](https://gist.github.com/jamiepollock/f2ed2be6744a8bd0f6b48cdd22fbed5a).
 
 ## Advanced 
 
