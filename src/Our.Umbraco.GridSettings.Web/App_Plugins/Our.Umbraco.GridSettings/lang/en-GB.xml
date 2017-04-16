@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+  <area alias="reset">
+    <key alias="alignment">Reset alignment</key>
+    <key alias="color">Reset colour</key>
+    <key alias="position">Reset position</key>
+    <key alias="value">Reset value</key>
+  </area>
+</language>

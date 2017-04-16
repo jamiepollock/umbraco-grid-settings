@@ -1,4 +1,4 @@
-// <copyright file="VersionInfo.cs" company="Jamie Pollock">
+﻿// <copyright file="VersionInfo.cs" company="Jamie Pollock">
 // Copyright (c) Jamie Pollock. All rights reserved.
 // Licensed under the Apache License, Version 2.0.
 // </copyright>
@@ -14,7 +14,7 @@ using System.Reflection;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-// [assembly: AssemblyVersion("0.3.0.4")]
-[assembly: AssemblyVersion("0.3.0.4")]
-[assembly: AssemblyFileVersion("0.3.0.4")]
-[assembly: AssemblyInformationalVersion("0.3.0-beta-000004")]
+// [assembly: AssemblyVersion("0.0.0.0")] 
+[assembly: AssemblyVersion("0.0.0.0")]
+[assembly: AssemblyFileVersion("0.0.0.0")]
+[assembly: AssemblyInformationalVersion("0.0.0.0")]

@@ -1,3 +1,6 @@
+.gridsettings--background-position  {
+    margin-bottom: 10px;
+}
 .gridsettings--background-position .col {
     background: #808080;
     width: 3em;

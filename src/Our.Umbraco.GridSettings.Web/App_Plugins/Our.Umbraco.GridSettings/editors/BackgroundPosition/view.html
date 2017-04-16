@@ -4,4 +4,5 @@
             <td ng-repeat="item in row.items" class="col col-{{item.cssClass}}" ng-class="{'active': isValue(item.value)}" title="{{item.value}}" ng-click="setValue(item.value)"><!-- --></td>
         </tr>
     </table>
+    <gridsettings-reset-button model="model.value" label-key="reset_position"/>
 </div>
