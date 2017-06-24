@@ -21,7 +21,7 @@
     <Readme>A backoffice plugin to add additional property editors for Umbraco Grid row &amp; column settings</Readme>
     <AuthorName>Jamie Pollock</AuthorName>
     <AuthorUrl>https://github.com/jamiepollock/Umbraco-Grid-Settings/graphs/contributors</AuthorUrl>
-    <IconUrl>https://raw.githubusercontent.com/jamiepollock/Umbraco-Grid-Settings/master/build/assets/icon/umbraco-gridsettings-128.png</IconUrl>
+    <IconUrl>https://raw.githubusercontent.com/jamiepollock/Umbraco-Grid-Settings/master/build/assets/icon/128x128.png</IconUrl>
     <PackageLicenseName>MIT license</PackageLicenseName>
 		<PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <ProjectUrl>https://github.com/jamiepollock/Umbraco-Grid-Settings</ProjectUrl>
@@ -129,7 +129,7 @@
       <AppPluginFiles Include="$(WebProjectDir)\App_Plugins\Our.Umbraco.GridSettings\**\*.*" />
 
       <!-- Umbraco specific -->
-      <UmbracoInstallerLogo Include="$(MSBuildProjectDirectory)\assets\icon\umbraco-GridSettings-32.png"/>
+      <UmbracoInstallerLogo Include="$(MSBuildProjectDirectory)\assets\icon\32x32.png"/>
       <PackageFile Include="$(MSBuildProjectDirectory)\package.xml" />
       
       <!-- NuGet specific -->
