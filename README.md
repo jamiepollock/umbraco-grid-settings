@@ -19,34 +19,17 @@ Download the package via one of the following:
 
 ### Usage
 
-See [Usage documentation](docs/Usage.md).
-
-## Current Property editors
-
-### Background 
-- [x] Background Repeat
-- [x] Background Position
-- [x] Background Size
-
-### Content Alignment
-- [ ] Text / Content Alignment
-  - [x] Horizontal
-  - [ ] Vertical
-
-### General
-- [ ] General radio check list (with prevalue support)
-- [x] Color Picker
-
+See the [Wiki](../../wiki/)!
 
 ## Bugs & Additions
 
-If you believe there are any property editors missing from the project please [raise an issue](https://github.com/jamiepollock/umbraco-grid-settings/issues/new). 
+If you believe there are any new additions this project can't live without or maybe you found a bug, please [raise an issue](../../issues/new). 
 
-If you have an implementation you'd like to please [submit a pull request](https://github.com/jamiepollock/umbraco-grid-settings/pull/new/).
+If you have an implementation you'd like to add, please [submit a pull request](../../pull/new/).
 
 ## Licensing
 
-Licensed under the [MIT License](https://github.com/jamiepollock/umbraco-grid-settings/blob/master/LICENSE.md).
+Licensed under the [MIT License](LICENSE.md).
 
 ### Package Logo
 
